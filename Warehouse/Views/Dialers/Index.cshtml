@@ -1,0 +1,47 @@
+﻿@model IEnumerable<Warehouse.Models.Dialer>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.DialerName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DialerAddress)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TelNumber)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.DialerName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DialerAddress)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TelNumber)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.DialerId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.DialerId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.DialerId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

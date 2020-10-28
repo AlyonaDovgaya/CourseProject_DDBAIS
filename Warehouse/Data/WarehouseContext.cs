@@ -16,6 +16,8 @@ namespace Warehouse.Data
         public DbSet<Dialer> Dialers { get; set; }
         public DbSet<Storage> Storages { get; set; }
         public DbSet<Product> Products { get; set; }
+        public DbSet<Order> Orders { get; set; }
+        public DbSet<Customer> Customers { get; set; }
 
     }
 }
